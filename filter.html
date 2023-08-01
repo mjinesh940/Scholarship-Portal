@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/filter.css">
+  <title>Filter Page</title>
+  <script>
+    function FilterResults() {
+      // Get the input values
+      var name = document.getElementById("name").value;
+      var age = document.getElementById("age").value;
+      var cast = document.getElementById("cast").value;
+      var category = document.getElementById("category").value;
+      var state = document.getElementById("state").value;
+      var country = document.getElementById("country").value;
+
+      // Perform filtering based on the input values
+      // Here, you can write your own logic to filter the results
+
+      // Display the filtered results
+      var resultsContainer = document.getElementById("results");
+      resultsContainer.innerHTML = "Filtered results:<br>Name: " + name +
+                                   "<br>Age: " + age +
+                                   "<br>Cast: " + cast +
+                                   "<br>Category: " + category +
+                                   "<br>State: " + state +
+                                   "<br>Country: " + country;
+    }
+  </script>
+</head>
+<body>
+  <h1>Filter Page</h1>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter name">
+
+    <!-- <label for="age">Age:</label>
+    <input type="number" id="age" placeholder="Enter age"> -->
+
+    <label for="cast">Cast:</label>
+    <input type="text" id="cast" placeholder="Enter cast">
+
+
+    <label for="category">Category:</label>
+    <select id="category">
+      <option value="General">GN</option>
+      <option value="obc">OBC</option>
+      <option value="sc">SC</option>
+      <option value="st">ST</option>
+      <option value="EWS">EWS</option>
+    </select>
+
+    <label for="Education">Current Course:</label>
+    <!-- <input type="text" id="edu" placeholder="Enter Education"> -->
+    <select id="edu">
+      <option value="I-X(Pre-matric)">I-X(Pre-matric)</option>
+      <option value="XI-XII(Post-matric)">XI-XII(Post-matric)</option>
+      <option value="UG">UG</option>
+      <option value="PG">PG</option>
+    </select>
+
+    <label for="state">State:</label>
+    <input type="text" id="state" placeholder="Enter state">
+
+    <!-- <label for="country">Country:</label>
+    <input type="text" id="country" placeholder="Enter country"> -->
+
+
+    <button type="button" onclick="filterResults()">Filter</button>
+  </form>
+
+  <div id="results"></div>
+</body>
+<script>
+
+
+// function filterResults() {
+//   // Get the input values
+//   var name = document.getElementById("name").value;
+//   var age = document.getElementById("age").value;
+//   var cast = document.getElementById("cast").value;
+//   var category = document.getElementById("category").value;
+//   var state = document.getElementById("state").value;
+//   var country = document.getElementById("country").value;
+
+//   // Construct the API endpoint URL with the filter parameters
+//   var apiUrl = "/api/scholarships?name=" + name + "&age=" + age + "&cast=" + cast + "&category=" + category + "&state=" + state + "&country=" + country;
+
+//   // Make an API request to fetch the filtered results
+//   fetch(apiUrl)
+//     .then(function(response) {
+//       console.log(response);
+//       return response.json();
+//     })
+//     .then(function(filteredResults) {
+//       // Display the filtered results
+//       var resultsContainer = document.getElementById("results");
+//       resultsContainer.innerHTML = "Filtered results:<br>" + JSON.stringify(filteredResults);
+//     })
+//     .catch(function(error) {
+//       console.error("Error fetching scholarship data:", error);
+//     });
+// }
+
+
+function filterResults() {
+  var name = document.getElementById("name").value;
+  //var age = document.getElementById("age").value;
+  var cast = document.getElementById("cast").value;
+  var category = document.getElementById("category").value;
+  var state = document.getElementById("state").value;
+  //var country = document.getElementById("country").value;
+
+  if (state === "Andhra Pradesh") {
+    var resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = "Filtered results:<br>Name: " + name +
+                                // "<br>Age: " + age +
+                                 "<br>Cast: " + cast +
+                                 "<br>Category: " + category +
+                                 "<br>State: " + state +
+                                // "<br>Country: " + country +
+                                 "<br><br>Pre & Post metric Scholarship:<br>" +
+                                 "1) <a href='https://jnanabhumi.apcfss.in/#undefined1'>https://jnanabhumi.apcfss.in/#undefined1</a>";
+    return;
+  }
+
+  else if (state === "Arunachal Pradesh") {
+    var resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = "Filtered results:<br>Name: " + name +
+                                // "<br>Age: " + age +
+                                 "<br>Cast: " + cast +
+                                 "<br>Category: " + category +
+                                 "<br>State: " + state +
+                                // "<br>Country: " + country +
+                                 "<br><br>Dates of Start & end is displayed on this <br>" + 
+                                 "<a href= 'https://scholarships.gov.in/'>https://scholarships.gov.in/</a>" +
+                                 "<br><br>1)	Umbrella Scheme for Education of ST Students-Pre Matric Scholarship (Class IX & X) for ST Students Arunachal Pradesh :   <br>" +
+                                 "<a href= 'https://scholarships.gov.in/public/schemeGuidelines/EDUGuidelinesAnnex1.pdf'>https://scholarships.gov.in/public/schemeGuidelines/EDUGuidelinesAnnex1.pdf</a>" +
+                                 "<br><br>2)	Umbrella Scheme for Education of ST Children -Post Matric Scholarship (PMS) for ST Students Arunachal Pradesh :  <br>" +
+                                 "<a href= ''>https://scholarships.gov.in/public/schemeGuidelines/EDUPostMatricScholarshipPMSforSTstudents.pdf</a>" +
+                                 "<br><br> 3)	Scheme for Award of Stipend to the schedule tribe students of Arunachal Pradesh :   <br>" +
+                                 "https://scholarships.gov.in/public/schemeGuidelines/ArunachalPradeshStipendSchemeGuideline.pdf</a>";
+                                 return;
+  }
+  else if (state === "Maharashtra") {
+    var resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = "Filtered results:<br>Name: " + name +
+                                //  "<br>Age: " + age +
+                                "<br>Cast: " + cast +
+                                 "<br>Category: " + category +
+                                 "<br>State: " + state +
+                                //"<br>Country: " + country +
+                                 "<br><br>Scholarship programs in Maharashtra:<br>" +
+                                 "a. Directorate of Higher Education:<br>" +
+                                 "   i. Rajarshi Chhatrapati Shahu Maharaj Shikshan Shulkh Shishyavrutti Scheme: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=8571'>https://maharashtra.gov.in/SchemeData.aspx?Id=8571</a><br>" +
+                                 "   ii. Dr. Punjabrao Deshmukh Vasatigruh Nirvah Bhatta Yojna (DHE): <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=8569'>https://maharashtra.gov.in/SchemeData.aspx?Id=8569</a><br>" +
+                                 "<br>" +
+                                 "b. OBC, SEBC, VJNT & SBC Welfare Department:<br>" +
+                                 "   i. Post Matric Scholarship to VJNT Students: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   ii. Tuition Fees and Examination Fees to VJNT Students: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   iii. Payment of Maintenance Allowance to VJNT and SBC Students Studying in Professional Courses and Living in Hostel Attached to Professional Colleges: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   iv. Rajarshi Chhatrapati Shahu Maharaj Merit Scholarship for students studying in 11th & 12th standard of VJNT & SBC category: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   v. Post Matric Scholarship to OBC Students: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   vi. Post Matric Scholarship to SBC Students: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   vii. Tuition Fees and Examination Fees to OBC Students: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   viii. Tuition Fees and Examination Fees to SBC Students: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   ix. Vocational Training Fee reimbursement for the OBC, SEBC, VJNT & SBC Welfare Department students: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "<br>" +
+                                 "c. Directorate of Technical Education:<br>" +
+                                 "   i. Rajarshi Chhatrapati Shahu Maharaj Shikshan Shulkh Shishyavrutti Scheme: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   ii. Dr. Punjabrao Deshmukh Vasatigruh Nirvah Bhatta Yojna (DHE): <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "<br>" +
+                                 "d. Directorate of Medical Education and Research:<br>" +
+                                 "   i. Rajarshri Chhatrapati Shahu Maharaj Fee Reimbursement Scheme: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   ii. Dr Panjabrao Deshmukh Hostel Maintenance Allowance: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   iii. Education Fee reimbursement for open category students affected due to SEBC and EWS reservation in medical and Dental colleges: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "<br>" +
+                                 "e. Post Matric Scholarship for persons with disability: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "<br>" +
+                                 "f. School Education & Sports department:<br>" +
+                                 "   i. Open Merit Scholarships in Junior College: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a> (Must be in 11,12)<br>" +
+                                 "   ii. Merit Scholarships for Economically Backward Class Students: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a> (50% in SSC)<br>" +
+                                 "<br>" +
+                                 "g. Tribal Development Department (Only for ST):<br>" +
+                                 "   i. Post Matric Scholarship Scheme (Government Of India): <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   ii. Tuition Fee & Exam Fee for Tribal Students (Freeship): <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   iii. Vocational Education Fee Reimbursement: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   iv. Vocational Education Maintenance Allowance: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   v. Vocational Training Fee reimbursement for the students belonging to Scheduled Tribe Category: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "<br>" +
+                                 "h. Minority Development Department:<br>" +
+                                 "   i. State Minority Scholarship Part II (DHE): <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a><br>" +
+                                 "   ii. Scholarship for students of minority communities pursuing Higher and Professional courses (DTE): <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a> (Belonging to minority communities – Jain, Muslim, Christian, Buddhist, Sikh, Parsi & Jews Community)<br>" +
+                                 "   iii. Scholarship for students of minority communities pursuing Higher and Professional courses (DMER): <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a> (Belonging to minority communities – Jain, Muslim, Christian, Buddhist, Sikh, Parsi & Jews Community & Pursuing MBBS, MDS, BHMS, BAMS, BUMS, BPTH, BOTH, BASLP, BP&O, BSc Nursing, MSc Nursing, BPMT, OPTHALMIC ASST., OPTOMETRY, PB BSc Nursing and courses affiliated to Maharashtra university of health science, Nashik)<br>" +
+                                 "<br>" +
+                                 "i. Skill Development, Employment & Entrepreneurship Department:<br>" +
+                                 "   i. Vocational Training Fee reimbursement for the students belonging to socially and educationally backward class and Open Category (Economically weaker section) students: <a href='https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX'>https://maharashtra.gov.in/SchemeData.aspx?Id=XXXX</a> (Government ITIs or Private ITIs)";
+    return;
+  }
+
+  else if (state === "Himachal Pradesh") {
+    var resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = "Filtered results:<br>Name: " + name +
+                                //  "<br>Age: " + age +
+                                 "<br>Cast: " + cast +
+                                 "<br>Category: " + category +
+                                 "<br>State: " + state +
+                                 //"<br>Country: " + country +
+                                 "<br><br>Scholarship programs in Himachal Pradesh:<br>" +
+                                 "1) PM's Scholarship Scheme: <a href='https://hp.gov.in/'>https://hp.gov.in/</a><br>" +
+                                 "2) Centrally offered Scholarships: <a href='https://hpepass.cgg.gov.in/NewHomePage.do?actionParameter=centralSchemes'>https://hpepass.cgg.gov.in/NewHomePage.do?actionParameter=centralSchemes</a><br>" +
+                                 "3) State offered Scholarships: <a href='https://hpepass.cgg.gov.in/NewHomePage.do?actionParameter=stateSchemes'>https://hpepass.cgg.gov.in/NewHomePage.do?actionParameter=stateSchemes</a><br>" +
+                                 "4) Technical Education Schemes: <a href='https://hpepass.cgg.gov.in/NewHomePage.do?actionParameter=technicalSchemes'>https://hpepass.cgg.gov.in/NewHomePage.do?actionParameter=technicalSchemes</a><br><br>" +
+                                 "Guidelines for Scholarships: <a href='https://scholarships.gov.in/#'>https://scholarships.gov.in/#</a><br><br>" +
+                                 "a) CENTRALLY SPONSORED POST MATRIC SCHOLARSHIP SCHEME FOR SC STUDENTS-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Centrally%20Sponsored%20Scheme%20%20of%20Post%20Matric%20Scholarship%20Scheme%20for%20SC%20Students_scheme.pdf'>Scheme Guidelines</a><br>" +
+                                 "b) CENTRALLY SPONSORED POST MATRIC SCHOLARSHIP SCHEME FOR ST STUDENTS-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Centrally%20Sponsored%20Scheme%20%20of%20Post%20Matric%20Scholarship%20Scheme%20for%20ST%20Students_scheme.pdf'>Scheme Guidelines</a><br>" +
+                                 "c) PM-YASASVI POST MATRIC SCHOLARSHIP SCHEME FOR OBC STUDENTS-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Centrally%20Sponsored%20Scheme%20of%20Post%20Matric%20Scholarship%20Scheme%20for%20OBC_scheme.pdf'>Scheme Guidelines</a><br>" +
+                                 "d) CENTRALLY SPONSORED PRE MATRIC SCHOLARSHIP SCHEME FOR ST STUDENTS-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Centrally%20Sponsored%20Scheme%20of%20Pre%20Matric%20Scholarship%20Scheme%20for%20ST%20Scheme.pdf'>Scheme Guidelines</a><br>" +
+                                 "e) CENTRALLY SPONSORED PRE MATRIC SCHOLARSHIP SCHEME FOR SC STUDENTS-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Centrally%20Sponsored%20Scheme%20of%20Pre%20Matric%20Scholarship%20Scheme%20for%20SC%20Students.pdf'>Scheme Guidelines</a><br>" +
+                                 "f) PM YASASVI PRE MATRIC SCHOLARSHIP SCHEME FOR OBC STUDENTS (CLASS IX AND X)-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Centrally%20sponsored%20scheme%20of%20pre%20matric%20scholarship%20scheme%20for%20Other%20backward%20classes%20%20students.pdf'>Scheme Guidelines</a><br>" +
+                                 "g) PM-YASASVI POST MATRIC SCHOLARSHIP FOR ECONOMICALLY BACKWARD CLASS STUDENTS-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Dr.%20Ambedkar%20Post%20Matric%20%20Scholarship%20Scheme%20for%20Economically%20Backward%20Classes.pdf'>Scheme Guidelines</a><br>" +
+                                 "h) MUKHYA MANTRI PROTSAHAN YOJANA-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Mukhya%20Mantri%20%20Protsahan%20Yojna.pdf'>Scheme Guidelines</a><br>" +
+                                 "i) MAHARISHI BALMIKI CHATRAVRITI YOJANA-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Mahrish%20Balmiki%20Chhatervriti%20Yojna.pdf'>Scheme Guidelines</a><br>" +
+                                 "j) Mukhya Mantri Vidyarthi Kalyan Yojna-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/IRDP.pdf'>Scheme Guidelines</a><br>" +
+                                 "k) KALPANA CHAWLA CHATRAVRITI YOJANA-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Kalpana%20Chawla%20Chhatravriti%20Yojna.pdf'>Scheme Guidelines</a><br>" +
+                                 "l) INDIRA GANDHI UTKRISHT CHATRAVRITI YOJANA -HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Indira%20Gandhi%20Utkrisht%20Chhatravriti%20Yojna.pdf'>Scheme Guidelines</a><br>" +
+                                 "m) THAKUR SEN NEGI UTKRISHT CHATRAVRITI YOJANA -HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Thakur%20Sen%20Negi%20Utkrisht%20Chhatervriti%20Yojna.pdf'>Scheme Guidelines</a><br>" +
+                                 "n) SWAMI VIVEKANAND UTKRISHT CHARAVRITI YOJANA-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Swami%20Vivekanand%20Utkrisht%20Chattarvriti%20%20Yojna.pdf'>Scheme Guidelines</a><br>" +
+                                 "o) DR.AMBEDKAR MEDHAVI CHATRAVRITI YOJANA FOR SC STUDENTS-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Dr.%20Ambedkar%20medhavi%20Chhatrvriti%20%20Yojna%20for%20SC%20Student.pdf'>Scheme Guidelines</a><br>" +
+                                 "p) DR.AMBEDKAR MEDHAVI CHATRAVRITI YOJANA FOR OBC STUDENTS-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Dr.%20Ambedkar%20medhavi%20Chhatrvriti%20%20Yojna%20for%20OBC%20Student.pdf'>Scheme Guidelines</a><br>" +
+                                 "q) SAINIK SCHOOL SCHOLARSHIP SCHEME-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/2086_G.pdf'>Scheme Guidelines</a><br>" +
+                                 "r) TECHNICAL EDUCATION SCHOLARSHIP SCHEME FOR ITI LEVEL-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Guidelines_3050.pdf'>Scheme Guidelines</a><br>" +
+                                 "s) TECHNICAL EDUCATION SCHOLARSHIP SCHEME FOR DEGREE LEVEL-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Guidelines_3051.pdf'>Scheme Guidelines</a><br>" +
+                                 "t) TECHNICAL EDUCATION SCHOLARSHIP SCHEME FOR DIPLOMA LEVEL-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/public/schemeGuidelines/HP_state_scheme/Guidelines_3052.pdf'>Scheme Guidelines</a><br>" +
+                                 "u) PM YASASVI PRE MATRIC SCHOLARSHIP SCHEME FOR EBC STUDENTS (CLASS IX AND X)-HIMACHAL PRADESH: <a href='https://scholarships.gov.in/'>Scheme Guidelines</a>";
+    return;
+  }  
+
+  else if (state === "Gujarat") {
+    var resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = "Filtered results:<br>Name: " + name +
+                                //  "<br>Age: " + age +
+                                 "<br>Cast: " + cast +
+                                 "<br>Category: " + category +
+                                 "<br>State: " + state +
+                                 //"<br>Country: " + country +
+                                 "<a href='https://www.digitalgujarat.gov.in/GSSP/StudentCorner/ScholarshipServices.aspx'>Gujarat State Scholarship Portal</a><br>" +
+                                 "1) PRE-MATRIC SCHOLARSHIP: <a href='https://www.digitalgujarat.gov.in/GSSP/StudentCorner/ScholarshipServices.aspx'>Link</a><br>" +
+                                 "2) POST MATRIC SCHOLARSHIP: <a href='https://www.digitalgujarat.gov.in/GSSP/StudentCorner/ScholarshipServices.aspx'>Link</a>";
+
+    return;
+  }
+
+  else if (state === "Bihar") {
+    var resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = "Filtered results:<br>Name: " + name +
+                                //  "<br>Age: " + age +
+                                 "<br>Cast: " + cast +
+                                 "<br>Category: " + category +
+                                 "<br>State: " + state +
+                                 //"<br>Country: " + country +
+                                 "<a href='http://bih.nic.in/'>Post Matric Scholarship</a><br>" +
+                                 "1) SC & ST students: <a href='https://www.pmsonline.bih.nic.in/pmsedu/(S(jn5zoxyavxuzdeeefe5itwj1))/pms/StudentDefault.aspx'>Link</a><br>" +
+                                 "2) BC & EBC Students: <a href='https://www.pmsonline.bih.nic.in/pmsedu/(S(jn5zoxyavxuzdeeefe5itwj1))/pms/StudentDefault.aspx'>Link</a><br>" +
+                                 "Guidelines are shared on link: <a href='http://bih.nic.in/'>Post Matric Scholarship</a>";
+    return;
+  
+  }
+
+  else if (state === "Jammu and Kashmir") {
+    var resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML = "Filtered results:<br>Name: " + name +
+                                //  "<br>Age: " + age +
+                                 "<br>Cast: " + cast +
+                                 "<br>Category: " + category +
+                                 "<br>State: " + state +
+                                 //"<br>Country: " + country +
+                                 "Jammu and Kashmir: National Scholarships: <a href='https://scholarships.gov.in/'>Link</a><br>" +
+                                 "Jammu and Kashmir: Directorate of Social Welfare, Kashmir: <a href='https://socialwelfarekashmir.jk.gov.in/POMPCOBC.html'>Post-matric Scholarship for Physically Challenged, SC & OBC Students</a><br>" +
+                                 "Jammu and Kashmir: Directorate of Social Welfare, Kashmir: <a href='https://socialwelfarekashmir.jk.gov.in/PRMPCOBC.html'>Pre-matric Scholarship for Physically Challenged and Other Backward Classes Students (OBC)</a><br>" +
+                                 "Jammu and Kashmir: Directorate of Social Welfare, Kashmir: <a href='https://socialwelfarekashmir.jk.gov.in/SITIOBC.html'>Stipend to ITI Trainees from OBC Background</a><br>" +
+                                 "Jammu and Kashmir: Directorate of Social Welfare, Kashmir: <a href='https://socialwelfarekashmir.jk.gov.in/PRCEUO.html'>Pre-matric Scholarship for Children of those Engaged in Unclean Occupation</a><br>" +
+                                 "Jammu and Kashmir: Directorate of Social Welfare, Kashmir: <a href='https://socialwelfarekashmir.jk.gov.in/PRSNM.html'>Pre-matric Scholarship to Students belonging to National Minorities</a><br>" +
+                                 "Jammu and Kashmir: Directorate of Social Welfare, Kashmir: <a href='https://socialwelfarekashmir.jk.gov.in/POSNM.html'>Post-matric Scholarship to students belonging to National Minorities</a><br>" +
+                                 "Jammu and Kashmir: Directorate of Social Welfare, Kashmir: <a href='https://socialwelfarekashmir.jk.gov.in/MCM.html'>Merit-cum-Means based scholarship to students belonging to National Minorities</a><br>" +
+                                 "Jammu and Kashmir: Directorate of Social Welfare, Kashmir: <a href='https://socialwelfarekashmir.jk.gov.in/ebc.html'>Dr. Ambedkar Post-matric scholarship for Economically Backward Classes (EBC) students</a><br>" +
+                                 "Jammu and Kashmir: Directorate of Social Welfare, Kashmir: <a href='https://socialwelfarekashmir.jk.gov.in/DNTs.html'>Dr. Ambedkar pre & post-matric scholarship for Denotified Nomadic & Semi-Nomadic Tribes (DNTs) students</a><br>" +
+                                 "Jammu and Kashmir: Directorate of Social Welfare, Kashmir: <a href='https://socialwelfarekashmir.jk.gov.in/CSPMSD.html'>Central Sector Scheme of pre & post-matric scholarship for students with disabilities</a><br>" +
+
+                                 "1) POST MATRIC SCHOLARSHIP TO ST STUDENTS - JAMMU AND KASHMIR: <a href='https://scholarships.gov.in/public/schemeGuidelines/PMS%20Scheme%20Guide%20Lines%20-%20Tribal%20Affairs.pdf'>Scheme Guidelines</a><br>" +
+                                 "2) CENTRALLY SPONSORED SCHEME OF PRE MATRIC SCHOLARSHIP FOR SC STUDENTS (CLASS IX & X) - JAMMU AND KASHMIR: <a href='https://scholarships.gov.in/public/schemeGuidelines/J&K/Guidelines_3049.pdf'>Scheme Guidelines</a><br>" +
+                                 "3) CENTRALLY SPONSORED SCHEME OF POST MATRIC SCHOLARSHIP FOR SC STUDENTS - JAMMU AND KASHMIR: <a href='https://scholarships.gov.in/public/schemeGuidelines/J&K/Guidelines_3048.pdf'>Scheme Guidelines</a><br>" +
+                                 "4) UMBRELLA SCHEME FOR EDUCATION OF ST STUDENTS - PRE MATRIC SCHOLARSHIP (CLASS IX & X) FOR ST STUDENTS - JAMMU AND KASHMIR: <a href='https://scholarships.gov.in/public/schemeGuidelines/J&K/Guidelines_3055.pdf'>Scheme Guidelines</a><br>";
+    return;
+    } else {
+     resultsContainer.innerHTML = "No scholarship information available for the selected state.";
+  }
+
+  // Perform filtering based on the input values
+  // Here, you can write your own logic to filter the results
+
+  // Display the filtered results
+  var resultsContainer = document.getElementById("results");
+  resultsContainer.innerHTML = "Filtered results:<br>Name: " + name +
+                              // "<br>Age: " + age +
+                               "<br>Cast: " + cast +
+                               "<br>Category: " + category +
+                               "<br>State: " + state ;
+                              // "<br>Country: " + country;
+}
+
+</script>
+</html>
